@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Afronden</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script/navdropdown.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--
+    Thema: Geschiedenis chatrooms
+    https://colorhunt.co/palette/363b4e4f3b78927fbfc4bbf0
+-->
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#"><figure>
+                    <img src="asset/img/logo.webp" alt="Logo achtergrond navigatie">
+                    <figcaption>Geschiedenis Chatrooms</figcaption>
+                </figure></a></li>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="aolim.html"><small>AOL Instant Messenger</small></a></li>
+                <li><a href="compuserve.html"><small>CompuServe CB Simulator</small></a></li>
+                <li><a href="talkomatic.html"><small>Talkomatic</small></a></li>
+                <li>
+                    <ul id="nav-nest" class="closed">
+                        <li><a href="#" onclick="toggleDrop()" id="kleurbehoud">MEER <span>&#8964;</span></a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://github.com/yousoudev?tab=repositories" target="_blank">GitHub <img src="asset/img/external.svg" width="20" height="20" alt="Knop leidt naar externe pagina"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+<main>
+    <header id="earth_flex">
+        <figure>
+            <img src="asset/img/earth_background.webp" alt="Foto">
+            <figcaption id="gesch_op_earth">De geschiedenis van chatrooms</figcaption>
+        </figure>
+    </header>
+
+    <hr class="whole_hr"> <!-- space weghalen na foto, geschiedenis en heden content is gegenereerd met ChatGPT -->
+        <section id="content_grid">
+            <div></div> <!-- lege kolom -->
+            <section id="geschied">
+                <h2>Geschiedenis</h2><hr>
+
+                <p>
+                    De geschiedenis van chatrooms gaat terug tot de jaren &apos;70 en &apos;80, toen vroege vormen van internetcommunicatie zoals Bulletin Board Systems (BBS) en Internet Relay Chat (IRC) populair werden. Deze platforms stonden gebruikers toe om in real-time te communiceren en gemeenschappen rond gedeelde interesses te vormen.
+                    <br><br>
+                    In de jaren &apos;90 en 2000 zagen we een explosie van populariteit in chatrooms met de opkomst van diensten zoals AOL Instant Messenger en Yahoo! Chat. Deze diensten introduceerden een breder publiek aan online communicatie en de vrije uitwisseling van ideeën op het internet.</p>
+            </section>
+
+            <section id="heden">
+                <h2>Heden</h2><hr>
+
+                <p>Na verloop van tijd evolueerden chatrooms en maakten plaats voor meer geavanceerde platforms zoals sociale mediawebsites en messaging apps zoals Facebook, WhatsApp, en Discord. Deze moderne platforms behouden de kernfunctie van real-time communicatie en gemeenschapsvorming, maar hebben ook nieuwe functies geïntroduceerd zoals videoconferencing, bestandsdeling, en integratie met andere online diensten.
+                    <br><br>
+                    In het heden blijven chatrooms een cruciale rol spelen in online communicatie, en de technologie blijft evolueren. Geavanceerde functies zoals end-to-end encryptie, bots en machine learning zijn nu gemeengoed geworden, waardoor gebruikers een veiliger en meer gepersonaliseerde chatervaring hebben. Platforms zoals Discord en Slack domineren het chatruimtelandschap, en bieden gebruikers geavanceerde tools voor samenwerking en community building.</p>
+            </section>
+            <div></div> <!-- lege kolom -->
+            <div class="grid_hr"><hr></div>
+        </section>
+
+    <section id="showcase_flex">
+        <figure>
+            <iframe src="https://www.youtube.com/embed/lNAgfMtRte4?si=EdlfeaG2MuTlmQmq" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </figure>
+
+        <figure>
+            <iframe src="https://www.youtube.com/embed/FxZ2epcJ9l0?si=AmLvMattNd3ByRDQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </figure>
+
+        <figure>
+            <video controls>
+                <source src="asset/vid/compuserve.mp4" type="video/webm">
+            </video>
+        </figure>
+
+        <figure>
+            <a href="https://talkomatic.sjzoppi.com/"><img src="asset/img/talkomatic.webp" alt="Layout van Talkomatic chatroom" loading="lazy"></a>
+        </figure>
+
+        <figure>
+            <a href="https://www.mirc.com/"><img src="asset/img/irc.webp" alt="Layout van een IRC-chatkanaal" loading="lazy"></a>
+        </figure>
+    </section>
+
+    <section>
+        <footer>
+            <section>
+                <h2>OVER</h2>
+                <hr>
+                <p>Hier staat wat tekst zonder betekenis omdat ik te lui ben om na te denken over tekst die hierbij kan passen</p>
+
+                <section id="socials">
+                    <a href="https://instagram.com"><figure>
+                        <img src="asset/img/instagram.svg" alt="Instagram logo">
+                        <figcaption>Vind ons op Instagram</figcaption>
+                    </figure></a>
+
+                    <a href="https://facebook.com"><figure>
+                        <img src="asset/img/facebook.svg" alt="Facebook logo">
+                        <figcaption>Vind ons op Facebook</figcaption>
+                    </figure></a>
+
+                   <a href="https://twitter.com"><figure>
+                        <img src="asset/img/twitter.svg" alt="Twitter ik bedoel X logo">
+                        <figcaption>Vind ons op <s>Twitter</s> X</figcaption>
+                    </figure></a>
+                </section>
+            </section>
+
+            <section>
+                <h2>LOREM</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores blanditiis cupiditate, libero praesentium tenetur voluptas? Aperiam, commodi deleniti dolorem, doloremque expedita, fugit ipsam molestias non quas quos recusandae saepe!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem itaque laborum nesciunt saepe. Autem commodi dolore ea, enim ex, excepturi harum laudantium quae quia, quod ut velit voluptate voluptates.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum natus, nemo pariatur praesentium rerum sed! Aliquid culpa dicta fuga minima quod rerum soluta. Animi cupiditate ea minus omnis qui!</p>
+            </section>
+        </footer>
+    </section>
+</main>
+
+<!-- Van: https://codepen.io/sheixt/pen/gOrZEve, delay weggehaald voor smooth animatie (ease: none) -->
+<script>
+    let anim = gsap.timeline({ repeat: -1, });
+    anim.to("#gesch_op_earth", 30, { backgroundPositionX: "-960px", ease: "none" });
+</script>
+
+</body>
+</html>

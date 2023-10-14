@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Afronden | Contact</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="script/navdropdown.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+
+</head>
+<body onload="getMap()">
+
+<section>
+    <nav>
+        <ul>
+            <li><a href="index.html"><figure>
+                <img src="asset/img/logo.webp" alt="Logo achtergrond navigatie">
+                <figcaption>Geschiedenis Chatrooms</figcaption>
+            </figure></a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aolim.html"><small>AOL Instant Messenger</small></a></li>
+            <li><a href="compuserve.html"><small>CompuServe CB Simulator</small></a></li>
+            <li><a href="talkomatic.html"><small>Talkomatic</small></a></li>
+            <li>
+                <ul id="nav-nest">
+                    <li><a href="#" onclick="toggleDrop()" id="kleurbehoud" class="kleurbehoud">MEER <span>&#8964;</span></a></li>
+                    <li><a href="#" class="active">Contact</a></li>
+                    <li><a href="https://github.com/yousoudev?tab=repositories" target="_blank">GitHub <img src="asset/img/external.svg" width="20" height="20" alt="Knop leidt naar externe pagina"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</section>
+
+<main> <!-- Google vraagt om billing info dus dat ga ik niet gebruiken, ipv dat gebruik ik Bing. Ik snap dat GMaps wss gratis is en je credit hebt maar ik ga daar geen betaalgegevens achterlaten -->
+    <section>
+        <div id="cont_wrapper">
+        <div id="cont_form">
+            <h2>Stuur ons een bericht</h2>
+            <hr>
+
+            <form method="post" action="https://jkorpela.fi/cgi-bin/echo.cgi">
+
+                <div class="formflex">
+                    <label for="voornaam">Voornaam: <span>*</span></label>
+                    <input type="text" id="voornaam" name="voornaam" required>
+                </div>
+
+                <div class="formflex">
+                    <label for="achternaam">Achternaam: <span>*</span></label>
+                    <input type="text" id="achternaam" name="achternaam" required>
+                </div>
+
+                <div class="formflex">
+                    <label for="email">E-mailadres: <span>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="mijn@email.com" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"> <!-- https://regexr.com/3e48o -->
+                </div>
+
+                <div class="formflex">
+                    <label for="telnr">Telefoonnummer:</label>
+                    <input type="tel" id="telnr" name="telnr" placeholder="+31612345678" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)"> <!-- https://stackoverflow.com/questions/17949757/regular-expression-for-dutch-phone-number -->
+                </div>
+
+                <div class="formflex">
+                    <label for="bericht">Uw bericht <small id="maxbericht">(0/2500)</small>: <span>*</span></label>
+                    <textarea id="bericht" name="bericht" oninput="updateText()" maxlength="2500"></textarea>
+                </div>
+
+                <input type="submit" value="Submit" onclick="checkSubmit()">
+            </form>
+
+            <div id="imgcontainer">
+            <img src="asset/img/contactimg.webp" alt="Vervaagde afbeelding van man die nummer intypt op telefoon">
+            </div>
+        </div>
+
+        <div id="bmaps"> </div>
+        </div>
+    </section>
+</main>
+
+    <section id="pushfoot">
+        <footer>
+            <section>
+                <h2>OVER</h2>
+                <hr>
+                <p>Hier staat wat tekst zonder betekenis omdat ik te lui ben om na te denken over tekst die hierbij kan passen</p>
+
+                <section id="socials">
+                    <a href="https://instagram.com"><figure>
+                        <img src="asset/img/instagram.svg" alt="Instagram logo">
+                        <figcaption>Vind ons op Instagram</figcaption>
+                    </figure></a>
+
+                    <a href="https://facebook.com"><figure>
+                        <img src="asset/img/facebook.svg" alt="Facebook logo">
+                        <figcaption>Vind ons op Facebook</figcaption>
+                    </figure></a>
+
+                    <a href="https://twitter.com"><figure>
+                        <img src="asset/img/twitter.svg" alt="Twitter ik bedoel X logo">
+                        <figcaption>Vind ons op <s>Twitter</s> X</figcaption>
+                    </figure></a>
+                </section>
+            </section>
+
+            <section>
+                <h2>LOREM</h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores blanditiis cupiditate, libero praesentium tenetur voluptas? Aperiam, commodi deleniti dolorem, doloremque expedita, fugit ipsam molestias non quas quos recusandae saepe!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolorem itaque laborum nesciunt saepe. Autem commodi dolore ea, enim ex, excepturi harum laudantium quae quia, quod ut velit voluptate voluptates.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum natus, nemo pariatur praesentium rerum sed! Aliquid culpa dicta fuga minima quod rerum soluta. Animi cupiditate ea minus omnis qui!</p>
+            </section>
+        </footer>
+    </section>
+
+<script type='text/javascript' src='https://sdk.virtualearth.net/api/maps/mapcontrol?callback=GetMap&key=Aqx52d6A1u9xBYLR8dMA7dpEyCLmDipdk_CwtrNEHQcuPdrCpoxbV8VMs5YD2Xke' async defer></script>
+
+<script>
+    function getMap(){
+        let map = new Microsoft.Maps.Map('#bmaps', {
+            credentials: 'Aqx52d6A1u9xBYLR8dMA7dpEyCLmDipdk_CwtrNEHQcuPdrCpoxbV8VMs5YD2Xke',
+            center: new Microsoft.Maps.Location(53.32945649555368, 6.524116012174437),
+            mapTypeId: Microsoft.Maps.MapTypeId.aeriel,
+            showZoomButtons: false,
+            showMapTypeSelector: false,
+            showBreadcrumb: false,
+            showLocateMeButton: false,
+            zoom: 16
+        }); // Niet ingezoomd op mijn exacte locatie, maar ik woon in Winsum
+
+        let center = map.getCenter();
+        let pin = new Microsoft.Maps.Pushpin(center, {
+            title: 'Mijn',
+            subTitle: 'Woonplaats',
+            text: '1'
+        });
+
+        map.entities.push(pin);
+    }
+
+    let emailRegex = new RegExp('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$');
+    let telRegex = new RegExp('(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)');
+
+    function checkSubmit(){
+        let vnaam = document.getElementById("voornaam");
+        let anaam = document.getElementById("achternaam");
+        let email = document.getElementById("email");
+        let telnr = document.getElementById("telnr");
+        let bericht = document.getElementById("bericht");
+
+        vnaam.value === "" ? vnaam.style.borderBottomColor = 'red' : vnaam.style.borderBottomColor = '#927FBF';
+        anaam.value === "" ? anaam.style.borderBottomColor = 'red' : anaam.style.borderBottomColor = '#927FBF';
+        !emailRegex.test(email.value) ? email.style.borderBottomColor = 'red' : email.style.borderBottomColor = '#927FBF';
+        !telRegex.test(telnr.value) ? telnr.style.borderBottomColor = 'red' : telnr.style.borderBottomColor = '#927FBF';
+        bericht.value.length < 1 ? bericht.style.borderColor = 'red' : bericht.style.borderColor = 'initial';
+    }
+
+    let changed = false;
+    function updateText(){
+        let text = document.getElementById("bericht").value.length;
+        let maxb = document.getElementById("maxbericht");
+
+        maxb.innerText = '(' + text + '/2500)';
+        if(text < 2000 && changed){
+            changed = false;
+            maxb.style.color = 'initial';
+
+        }else if(text > 2000 && text < 2400){
+            changed = true;
+            maxb.style.color = '#9c9e19';
+
+        }else if(text > 2400){
+            changed = true;
+            maxb.style.color = 'red';
+
+        }
+    }
+</script>
+
+</body>
+</html>
