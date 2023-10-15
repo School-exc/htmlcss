@@ -121,15 +121,15 @@
 <script>
     function getMap(){
         let map = new Microsoft.Maps.Map('#bmaps', {
-            credentials: 'Aqx52d6A1u9xBYLR8dMA7dpEyCLmDipdk_CwtrNEHQcuPdrCpoxbV8VMs5YD2Xke',
-            center: new Microsoft.Maps.Location(53.32945649555368, 6.524116012174437),
+            credentials: '',
+            center: new Microsoft.Maps.Location(),
             mapTypeId: Microsoft.Maps.MapTypeId.aeriel,
             showZoomButtons: false,
             showMapTypeSelector: false,
             showBreadcrumb: false,
             showLocateMeButton: false,
             zoom: 16
-        }); // Niet ingezoomd op mijn exacte locatie, maar ik woon in Winsum
+        });
 
         let center = map.getCenter();
         let pin = new Microsoft.Maps.Pushpin(center, {
